@@ -1,20 +1,23 @@
 #include<stdio.h>
 #include<string.h>
+//extern  login_portal();
+//extern  staff_page();
+//extern  customer_page();
 int main()
 {
-    char    login_access;
+    char    login_accessvar[], logout_var;
     login_access    =   login_portal(); //returns tbd
-    switch (login_access)
+    switch (login_accessvar)
     {
     case "Staff"/* constant-expression */:
-        
+        staff_page();
         break;
     case "Customer":
-        
+        customer_page();
         break;
     
     default:
-        printf("\nError.\n")
+        printf("\nError.\n") //Or maybe the default should be to show the available items list (info only)
         break;
     }
 }
