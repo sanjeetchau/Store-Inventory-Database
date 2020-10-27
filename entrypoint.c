@@ -17,7 +17,7 @@ int main()
         break;
     
     default:
-        printf("\nError.\n") //Or maybe the default should be to show the available items list (info only)
+        printf("\n Error.\n") //Or maybe the default should be to show the available items list (info only)
         break;
     }
 }
