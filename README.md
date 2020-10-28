@@ -22,3 +22,5 @@
 * [Secondary priority] Customer Page/Access [Adding this will lead to Staff Access being modified for customer info access]
   * <tab> All Browse Inventory module
   * <tab> other features incoming
+
+* [future priority] Encryptions/security for login access/info
