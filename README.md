@@ -6,19 +6,19 @@
 
 <p><b><i>General Outline/Structure</i></b></p>
 
-1. Browse Inventory (Read only features mostly)
+* Browse Inventory (Read only features mostly)
   * <tab> Items list
   * <tab> Items details such as stock, prices, date added, date of expiry
 
-2. Staff Page/Access
+* Staff Page/Access
   * <tab> All the features of Browse Inventory module
   * <tab> Add new items
   * <tab> update existing item details
 
-3. [Secondary priority] Checkout Page
+* [Secondary priority] Checkout Page
   * <tab> Update details of checkout items automatically
   * <tab> billing details
 
-4. [Secondary priority] Customer Page/Access [Adding this will lead to Staff Access being modified for customer info access]
+* [Secondary priority] Customer Page/Access [Adding this will lead to Staff Access being modified for customer info access]
   * <tab> All Browse Inventory module
   * <tab> other features incoming
