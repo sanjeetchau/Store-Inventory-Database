@@ -22,6 +22,7 @@ bool login_portal()
 	ch = getc(fp);
 	while(ch != EOF)
 	{
+		count1 = 0;
 		while((count1 != 2) && (ch != EOF))
 		{
 			if (ch == ",")
