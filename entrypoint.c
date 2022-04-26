@@ -9,15 +9,15 @@ int main()
     login_access    =   login_portal(); //returns tbd
     switch (login_accessvar)
     {
-    case "Staff"/* constant-expression */:
-        staff_page();
-        break;
-    case "Customer":
-        customer_page();
-        break;
+    	case "Staff"/* constant-expression */:
+        	staff_page();
+        	break;
+    	case "Customer":
+        	customer_page();
+        	break;
     
-    default:
-        printf("\n Error.\n") //Or maybe the default should be to show the available items list (info only)
-        break;
+    	default:
+        	printf("\n Error.\n") //Or maybe the default should be to show the available items list (info only)
+        	break;
     }
 }
