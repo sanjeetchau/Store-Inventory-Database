@@ -38,9 +38,10 @@ bool login_portal()
 				strcat(txt_stream2, ch);
 			}
 		}
-		printf("user_id : %s , password : %s", txt_stream1, txt_stream2);
+		printf("\n user_id : %s , password : %s", txt_stream1, txt_stream2);
 	}
 
+	fclose(fp);
 
 
 	return 0;
