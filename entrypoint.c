@@ -12,10 +12,10 @@ int main()
     login_accessvar    =   login_portal(); //returns tbd
     switch (login_accessvar)
     {
-    	case "Staff"/* constant-expression */:
+    	case "0"/* bool-value for "staff" */:
         	staff_page();
         	break;
-    	case "Customer":
+    	case "1":
         	customer_page();
         	break;
     
