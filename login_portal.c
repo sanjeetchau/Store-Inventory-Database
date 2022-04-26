@@ -27,6 +27,7 @@ bool login_portal()
 			if (ch == ",")
 			{
 				count1++;
+				continue;
 			}
 			if (strlen(txt_stream1) < 11)
 			{
