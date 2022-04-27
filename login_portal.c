@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-bool login_portal()
+bool main ()
 {
 	//trying file handling staff_credentials.csv first
 	
@@ -22,11 +22,13 @@ bool login_portal()
 	ch = getc(fp);
 	while(ch != EOF)
 	{
+		count1 = 0;
 		while((count1 != 2) && (ch != EOF))
 		{
 			if (ch == ",")
 			{
 				count1++;
+				ch = getc(fp);
 				continue;
 			}
 			if (strlen(txt_stream1) < 11)
@@ -37,6 +39,7 @@ bool login_portal()
 			{
 				strcat(txt_stream2, ch);
 			}
+			ch = getc(fp);
 		}
 		printf("\n user_id : %s , password : %s", txt_stream1, txt_stream2);
 	}
