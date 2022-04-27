@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-bool main ()
+int main (void)
 {
 	//trying file handling staff_credentials.csv first
 	
@@ -15,11 +15,22 @@ bool main ()
 					       //will worry about dynamic memory allocations
 					       //--for varying length of uid and passwords later
 	
+	printf("Hello");
 	fp = fopen("./staff_credentials.csv", "r");
-	fp = fp + 21*(sizeof(char)); //the length of ' "user_id","password", ' is 21 characters
+	
+	//fp = fp + 21*(sizeof(char)); //the length of ' "user_id","password", ' is 21 characters
 				     //cheating again
 	
+	for( i = 0; i <= 20; i++) //this loop works instead of directly trying to increase the fp pointer with arithmetic
+				  //i hate pointers
+	{
+		getc(fp);
+	}
+	
 	ch = getc(fp);
+	putchar(ch);
+	//works till here so far
+
 	while(ch != EOF)
 	{
 		count1 = 0;
@@ -41,7 +52,8 @@ bool main ()
 			}
 			ch = getc(fp);
 		}
-		printf("\n user_id : %s , password : %s", txt_stream1, txt_stream2);
+		puts(txt_stream1);
+		puts(txt_stream2);
 	}
 
 	fclose(fp);
