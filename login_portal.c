@@ -10,12 +10,23 @@ int main (void)
 	int i, j, k, count1, count2;
 	count1 = 0;
 	count2 = 0;
+	char *p1, *p2, *p3;
 	char ch, txt_stream1[12], txt_stream2[12]; //don't know if this needs to be an array
 					       //gonna cheat and do 11 char long string arrays (coz samples are that long)
 					       //will worry about dynamic memory allocations
 					       //--for varying length of uid and passwords later
 	
-	printf("Hello");
+
+	p1 = txt_stream1;
+	p2 = txt_stream2;
+	//p3 = ch;
+	//p1 = "text2";				//test string-input
+
+	
+
+	//printf("Hello");
+	//ch[1] = '\0';
+
 	fp = fopen("./staff_credentials.csv", "r");
 	
 	//fp = fp + 21*(sizeof(char)); //the length of ' "user_id","password", ' is 21 characters
@@ -34,34 +45,44 @@ int main (void)
 	puts("\nbefore loop");
 	while(ch != EOF)
 	{
-		puts("\nouter while start");								//test print
+		//puts("\nouter while start");								//test print
 		count1 = 0;
-		while((count1 != 2) && (ch != EOF))
+		txt_stream1[0] = '\0';
+		txt_stream2[0] = '\0';
+		while( (count1 != 2) && (ch != EOF) && (strlen(txt_stream1) != 11) && (strlen(txt_stream2) !=11) )
 		{
-			puts("\ninner while start");							//test print
+			//puts("\ninner while start");							//test print
 			putchar(ch);									//test print
 			if (ch == ',')
 			{
 				count1++;
 				ch = getc(fp);
+				//puts("\ninner while first conditional");				//test print
 				continue;
 			}
 			if (strlen(txt_stream1) < 11)
 			{
-				strcat(txt_stream1, ch);
+				//puts("\ninner while second conditional");				//test print
+				strncat(txt_stream1, &ch, 1);
+				//puts("\n inner while second conditional after strcat");			//test print
+				//txt_stream1 = txt_stream1.c_str();
 			}
-			if ((strlen(txt_stream1) >= 11) && (strlen(txt_stream2) < 11))
+			if ( (strlen(txt_stream1) == 11) && (strlen(txt_stream2) < 11) )		//try "==11" instead of >=
 			{
-				strcat(txt_stream2, ch);
+				//puts("\ninner while third conditional");				//test print
+				strncat(txt_stream2, &ch, 1);
 			}
 			ch = getc(fp);
-			puts("\ninner while end");							//test print; not working
+			//puts("\ninner while end");							//test print
 		}
-		puts("\nouter while end");								//test print; not working
-		puts(txt_stream1);
-		puts(txt_stream2);
+		printf("\nuser id : %s and password : %s ", txt_stream1, txt_stream2);
+
+		//puts("\nouter while end");								//test print; not working
+		//puts(txt_stream1);
+		//puts(txt_stream2);
 	}
 	puts("\nend hello\n");										//test print; not working 
+	
 
 	fclose(fp);
 
