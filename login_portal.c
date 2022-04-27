@@ -28,15 +28,17 @@ int main (void)
 	}
 	
 	ch = getc(fp);
-	putchar(ch);
+	putchar(ch);											//test print
 	//works till here so far
-
+	
+	puts("\nhello puts");
 	while(ch != EOF)
 	{
 		count1 = 0;
 		while((count1 != 2) && (ch != EOF))
 		{
-			if (ch == ",")
+			putchar(ch);									//test print
+			if (ch == ',')
 			{
 				count1++;
 				ch = getc(fp);
@@ -51,10 +53,13 @@ int main (void)
 				strcat(txt_stream2, ch);
 			}
 			ch = getc(fp);
+			puts("\nhello inner while");							//test print; not working
 		}
+		puts("\nhello outer while");								//test print; not working
 		puts(txt_stream1);
 		puts(txt_stream2);
 	}
+	puts("\nend hello\n");										//test print; not working 
 
 	fclose(fp);
 
