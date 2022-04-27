@@ -31,12 +31,14 @@ int main (void)
 	putchar(ch);											//test print
 	//works till here so far
 	
-	puts("\nhello puts");
+	puts("\nbefore loop");
 	while(ch != EOF)
 	{
+		puts("\nouter while start");								//test print
 		count1 = 0;
 		while((count1 != 2) && (ch != EOF))
 		{
+			puts("\ninner while start");							//test print
 			putchar(ch);									//test print
 			if (ch == ',')
 			{
@@ -53,9 +55,9 @@ int main (void)
 				strcat(txt_stream2, ch);
 			}
 			ch = getc(fp);
-			puts("\nhello inner while");							//test print; not working
+			puts("\ninner while end");							//test print; not working
 		}
-		puts("\nhello outer while");								//test print; not working
+		puts("\nouter while end");								//test print; not working
 		puts(txt_stream1);
 		puts(txt_stream2);
 	}
