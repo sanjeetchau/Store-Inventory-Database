@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<stdbool.h>
 
 int main (void)
 {
@@ -8,6 +9,8 @@ int main (void)
 	
 	FILE *fp;
 	int i, j, k, count1, count2;
+	bool a;
+	a = (2 < 3);
 	count1 = 0;
 	count2 = 0;
 	char *p1, *p2, *p3;
@@ -17,6 +20,7 @@ int main (void)
 					       //--for varying length of uid and passwords later
 	
 
+	//printf("%d",a);
 	p1 = txt_stream1;
 	p2 = txt_stream2;
 	//p3 = ch;
@@ -39,8 +43,7 @@ int main (void)
 	}
 	
 	ch = getc(fp);
-	putchar(ch);											//test print
-	//works till here so far
+	//putchar(ch);											//test print
 	
 	puts("\nbefore loop");
 	while(ch != EOF)
@@ -49,10 +52,11 @@ int main (void)
 		count1 = 0;
 		txt_stream1[0] = '\0';
 		txt_stream2[0] = '\0';
-		while( (count1 != 2) && (ch != EOF) && (strlen(txt_stream1) != 11) && (strlen(txt_stream2) !=11) )
+		a = true;
+		while( (count1 != 2) && a ) //'a' is the bool var that checks when both txts are full
 		{
 			//puts("\ninner while start");							//test print
-			putchar(ch);									//test print
+			//putchar(ch);									//test print
 			if (ch == ',')
 			{
 				count1++;
@@ -73,6 +77,9 @@ int main (void)
 				strncat(txt_stream2, &ch, 1);
 			}
 			ch = getc(fp);
+			a = (strlen(txt_stream1) == 11) && (strlen(txt_stream2) == 11);
+			a = a && (ch != EOF);
+			a = !a;
 			//puts("\ninner while end");							//test print
 		}
 		printf("\nuser id : %s and password : %s ", txt_stream1, txt_stream2);
