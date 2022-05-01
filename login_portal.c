@@ -54,6 +54,8 @@ int main (void)
 		txt_stream2[0] = '\0';
 		a = true;
 		while( (count1 != 2) && a ) //'a' is the bool var that checks when both txts are full
+                                //--> doesn't work even when the conditional is negated
+                                //--> i.e. while( !((count1 == 2) || !a) ) gives exact same logical error
 		{
 			//puts("\ninner while start");							//test print
 			//putchar(ch);									//test print
