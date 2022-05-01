@@ -45,7 +45,7 @@ int main (void)
 	ch = getc(fp);
 	//putchar(ch);											//test print
 	
-	puts("\nbefore loop");
+	//puts("\nbefore loop");
 	while(ch != EOF)
 	{
 		//puts("\nouter while start");								//test print
@@ -64,14 +64,14 @@ int main (void)
 				//puts("\ninner while first conditional");				//test print
 				continue;
 			}
-			if (strlen(txt_stream1) < 11)
+			if (!((strlen(txt_stream1) == 11)))
 			{
 				//puts("\ninner while second conditional");				//test print
 				strncat(txt_stream1, &ch, 1);
 				//puts("\n inner while second conditional after strcat");			//test print
 				//txt_stream1 = txt_stream1.c_str();
 			}
-			if ( (strlen(txt_stream1) == 11) && (strlen(txt_stream2) < 11) )		//try "==11" instead of >=
+			if ( (strlen(txt_stream1) == 11) && !(strlen(txt_stream2) == 11) )		//try "==11" instead of >=
 			{
 				//puts("\ninner while third conditional");				//test print
 				strncat(txt_stream2, &ch, 1);
