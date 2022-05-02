@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 
 int main (void)
 {
@@ -53,7 +53,7 @@ int main (void)
 		txt_stream1[0] = '\0';
 		txt_stream2[0] = '\0';
 		a = true;
-		while( (count1 != 2) && a ) //'a' is the bool var that checks when both txts are full
+		while( (count1 != 2) && (ch != EOF) ) //'a' is the bool var that checks when both txts are full
                                 //--> doesn't work even when the conditional is negated
                                 //--> i.e. while( !((count1 == 2) || !a) ) gives exact same logical error
 		{
@@ -64,9 +64,11 @@ int main (void)
 				count1++;
 				ch = getc(fp);
 				//puts("\ninner while first conditional");				//test print
-				continue;
+				a = a && (ch != EOF);
+        a = !a;
+        continue;
 			}
-			if (!((strlen(txt_stream1) == 11)))
+			if (!(strlen(txt_stream1) == 11))
 			{
 				//puts("\ninner while second conditional");				//test print
 				strncat(txt_stream1, &ch, 1);
