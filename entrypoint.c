@@ -1,9 +1,9 @@
-#include<stdio.h>
-#include<string.h>
-//extern  login_portal();
-//extern  staff_page();
-//extern  customer_page();
-int main()
+//#include<stdio.h>
+//#include<string.h>
+  //extern  login_portal();                   //(old idea) prolly won't do this, prolly doesn't even work 
+  //extern  staff_page();
+  //extern  customer_page();
+void entrypoint()
 {
     //char    login_accessvar[]; // logout_var;
     bool login_accessvar; // maybe I don't need to be fancy and use strings here

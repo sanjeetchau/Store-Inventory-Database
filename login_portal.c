@@ -1,9 +1,11 @@
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 
-int main (void)
+void login_portal(void)
 {
 	//trying file handling staff_credentials.csv first
 	
@@ -100,5 +102,5 @@ int main (void)
 	fclose(fp);
 
 
-	return 0;
+	//return 0;
 }

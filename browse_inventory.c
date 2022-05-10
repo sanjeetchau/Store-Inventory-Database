@@ -1,8 +1,8 @@
-#include<stdio.h>
-#include<string.h>
+//#include<stdio.h>
+//#include<string.h>
 
 
-char browse_inventory()
+void browse_inventory()
 {
-    
+  printf("browse_inventory module\n");  
 }
